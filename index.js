@@ -89,10 +89,10 @@ function getRemainingTime() {
         }
     }
 
-    items.forEach(( (item, index)=> { // use arrow function 
+    items.forEach(((item, index) => { // use arrow function
         item.innerHTML = format(values[index]);
-    )});
-
+    }));
+    
     if (remaining < 0) {
         clearInterval(countdown);    
         deadLine.innerHTML = `<h4 class="expired">Sorry, this giveaway has expired</h4>`;
