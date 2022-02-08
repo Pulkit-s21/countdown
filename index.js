@@ -62,10 +62,10 @@ function getRemainingTime() {
     const today = new Date().getTime();
     const remaining = futureTime - today;
 
-    // values in milliseconds
-    const oneDay = 24 * 60 * 60 * 1000;
-    const oneHour = 60 * 60 * 1000;
+    // values in milliseconds ~ this way it's clean ~
     const oneMinute = 60 * 1000;
+    const oneDay = 24 * 60 * oneMinute;
+    const oneHour = 60 * oneMinute;
 
     // calculate all values
     let days = remaining / oneDay;
@@ -89,9 +89,9 @@ function getRemainingTime() {
         }
     }
 
-    items.forEach(function (item, index) {
+    items.forEach(( (item, index)=> { // use arrow function 
         item.innerHTML = format(values[index]);
-    });
+    )});
 
     if (remaining < 0) {
         clearInterval(countdown);    
